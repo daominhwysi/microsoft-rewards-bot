@@ -13,7 +13,7 @@ async function automateMicrosoftReward({ headless = true, profile = 1 }) {
       const userAgent = await getText('./data/useragent.txt', profile);
       browser = await puppeteer.launch({ headless, userDataDir: `./user_data/${profile}` });
       const page = await browser.newPage();
-      await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.5791.44 Safari/537.36 Edg/115.0.1898.36')
+      await page.setUserAgent(userAgent)
       let points; // Khởi tạo biến points ở đầu hàm
       let user = 'null';
 
@@ -47,6 +47,7 @@ async function automateMicrosoftReward({ headless = true, profile = 1 }) {
       }
 
       for (let index = 0; index < pcSearch; index++) {
+        await page.setUserAgent(userAgent)
         await page.goto('https://www.bing.com/?scope=web&cc=VN');
         await page.waitForSelector('#sb_form');
 
@@ -63,7 +64,7 @@ async function automateMicrosoftReward({ headless = true, profile = 1 }) {
           await page.waitForSelector('.b_algo');
         }
       }
-
+      await page.setUserAgent(userAgent)
       await page.goto('https://rewards.microsoft.com');
 
       const targetSelector = '#balanceToolTipDiv > p > mee-rewards-counter-animation > span';

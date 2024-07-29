@@ -2,3 +2,10 @@
  : 1,701
 
 Nguyen Phan Dong : 1,064
+Dao Minh : 1,398
+Don Smith : 1,353
+Gay Jr : 816
+Minh Vu Nguyen : 1,289
+Phan Thanh Bình : 897
+Hoang Viet : 718
+Total :10362

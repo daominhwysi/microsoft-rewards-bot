@@ -1,11 +1,5 @@
 const fs = require('fs').promises;
 
-/**
- * Kiểm tra xem một dòng trong file có dữ liệu hay không.
- * @param {string} filePath - Đường dẫn đến file .txt.
- * @param {number} lineNumber - Số dòng cần kiểm tra (bắt đầu từ 1).
- * @returns {Promise<void>} - Một Promise không có giá trị trả về.
- */
 async function checkLineInFile(filePath, lineNumber) {
     // Đọc nội dung của file
     const data = await fs.readFile(filePath, 'utf8');
